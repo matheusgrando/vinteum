@@ -15,10 +15,14 @@ public class PrimaryController {
     @FXML private Label pontosJogador;
     @FXML private Label resultado;
 
-    // private Jogo jogo;
+    private Jogo jogo = new Jogo();
 
     public void turno(){
+        if(!jogo.jogador.parou())
+            jogo.distribuirCartaParaJogador(jogo.jogador);
 
+       if(!jogo.computador.parou())
+           jogo.distribuirCartaParaJogador(jogo.computador);
     }
 
     public void atualizar(){
